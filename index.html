@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك لفهم نفسك والتوقف عن جلد الذات | Abouawd Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for Arabic & Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            transition: background-color 0.35s ease, color 0.35s ease;
+            overflow-x: hidden;
+        }
+        html[lang="en"] body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+        }
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #14b8a6;
+            border-radius: 9999px;
+        }
+        /* Glassmorphism Utilities */
+        .glass-card {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        /* Breathing Circle Animation */
+        .breath-circle {
+            transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
+        }
+        .breath-inhale {
+            transform: scale(1.42);
+            box-shadow: 0 0 55px rgba(20, 184, 166, 0.55);
+        }
+        .breath-hold {
+            transform: scale(1.42);
+            box-shadow: 0 0 70px rgba(139, 92, 246, 0.65);
+        }
+        .breath-exhale {
+            transform: scale(1);
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+        }
+        /* Subtle Floating Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white">
+
+    <!-- Ambient Background Glows -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-500/15 dark:bg-brand-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -left-32 w-96 h-96 bg-purple-500/15 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 right-1/4 w-96 h-96 bg-amber-500/10 dark:bg-teal-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card bg-white/85 dark:bg-slate-900/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3">
+            <!-- Brand Logo & Title -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-seedling text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-brand-600 to-purple-600 dark:from-brand-400 dark:to-purple-400 bg-clip-text text-transparent" data-i18n="navTitle">توازن الذات</span>
+                        <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-300 border border-brand-300/40">Abouawd Studio</span>
+                    </div>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 hidden sm:block" data-i18n="navSubtitle">دليلك التفاعلي لفهم نفسك والتوقف عن جلد الذات</p>
+                </div>
+            </a>
+
+            <!-- Desktop Quick Links -->
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+                <a href="#video-section" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" data-i18n="navVideo">الفيديو والمحاور</a>
+                <a href="#comparison-section" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" data-i18n="navComparison">الفرق الجوهري</a>
+                <a href="#quiz-section" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" data-i18n="navQuiz">مقياس جلد الذات</a>
+                <a href="#reframing-section" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" data-i18n="navReframe">مختبر الأفكار</a>
+                <a href="#toolkit-section" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition" data-i18n="navToolkit">خطة التعافي</a>
+            </nav>
+
+            <!-- Action Controls: Language Toggle & Dark Mode Toggle -->
+            <div class="flex items-center gap-2.5">
+                <!-- Language Switcher Button -->
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all shadow-sm" aria-label="Toggle Language">
+                    <i class="fa-solid fa-earth-americas text-brand-500"></i>
+                    <span id="langBtnText">English</span>
+                </button>
+
+                <!-- Theme Switcher Button -->
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-amber-500 dark:text-amber-400 border border-slate-200 dark:border-slate-700 transition-all shadow-sm" aria-label="Toggle Dark Mode">
+                    <i id="themeIcon" class="fa-solid fa-sun text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="relative z-10 flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-brand-900 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-slate-800">
+            <div class="absolute top-0 left-0 w-full h-full opacity-15 pointer-events-none bg-[radial-gradient(#2dd4bf_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 border border-brand-400/30 text-brand-300 text-xs sm:text-sm font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+                        <span data-i18n="heroBadge">رحلة تفاعلية من محتوى قناة Abouawd Studio</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight" data-i18n="heroTitle">
+                        دليلك لفهم نفسك والتوقف عن جلد الذات
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl" data-i18n="heroDesc">
+                        كثيراً ما نخلط بين «محاسبة النفس» التي تدفعنا للنمو، وبين «جلد الذات» الذي يستنزف طاقتنا ويشل حركتنا. استكشف في هذا التطبيق التفاعلي جذور القسوة الداخلية، واختبر مستوى وعيك الذاتي، وتدرب عملياً على بناء علاقة صحية ومتزنة مع نفسك.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#quiz-section" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-teal-500 hover:from-brand-600 hover:to-teal-600 text-white font-bold shadow-lg shadow-brand-500/30 flex items-center gap-2.5 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                            <span data-i18n="heroCtaPrimary">ابدأ اختبار فهم الذات</span>
+                        </a>
+                        <a href="#video-section" class="px-5 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/15 flex items-center gap-2.5 transition">
+                            <i class="fa-brands fa-youtube text-red-400 text-lg"></i>
+                            <span data-i18n="heroCtaSecondary">شاهد الفيديو والملخص (8:55)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Quote & Quick Stats Card -->
+                <div class="lg:col-span-5">
+                    <div class="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6 space-y-5 shadow-xl animate-float">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center">
+                                    <i class="fa-solid fa-lightbulb text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-sm text-white" data-i18n="insightCardHeader">قاعدة ذهبية للوعي النفسي</h3>
+                                    <p class="text-xs text-slate-300" data-i18n="insightCardSub">اضغط لتبديل الحكمة التأملية</p>
+                                </div>
+                            </div>
+                            <button onclick="nextQuote()" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-brand-300 flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-rotate"></i>
+                                <span data-i18n="nextQuoteBtn">حكمة أخرى</span>
+                            </button>
+                        </div>
+
+                        <blockquote id="heroQuoteText" class="text-base sm:text-lg font-medium text-slate-100 leading-relaxed min-h-[4.5rem] flex items-center">
+                            "أنت لست أخطاءك؛ الخطأ حدث عابر في سلوكك يمكن إصلاحه، وليس وصمة دائمة في هويتك."
+                        </blockquote>
+
+                        <div class="grid grid-cols-3 gap-2 pt-2 text-center">
+                            <div class="p-3 rounded-xl bg-slate-950/50 border border-white/10">
+                                <div class="text-brand-400 font-black text-lg">4</div>
+                                <div class="text-[11px] text-slate-300" data-i18n="statPillars">محاور أساسية</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-950/50 border border-white/10">
+                                <div class="text-purple-400 font-black text-lg">6</div>
+                                <div class="text-[11px] text-slate-300" data-i18n="statQuestions">أسئلة تشخيصية</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-950/50 border border-white/10">
+                                <div class="text-amber-400 font-black text-lg">8:55</div>
+                                <div class="text-[11px] text-slate-300" data-i18n="statDuration">دقائق من الوعي</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: VIDEO & INTERACTIVE CHAPTERS -->
+        <section id="video-section" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400" data-i18n="sec1Tag">المصدر المرئي والخريطة الذهنية</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-1" data-i18n="sec1Title">الفيديو التفاعلي ومحاور الفهم العميق</h2>
+                </div>
+                <a href="https://youtu.be/f-eh6xem59I?si=Xt4fApSa-p4jG5we" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-red-600 dark:text-red-400 hover:underline">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                    <span data-i18n="openYoutubeLink">فتح الفيديو مباشرة على يوتيوب</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <!-- Embedded Video Player Card -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-5 shadow-lg border border-slate-200 dark:border-slate-800 space-y-4">
+                    <div class="relative w-full overflow-hidden rounded-2xl aspect-video bg-slate-950 shadow-inner">
+                        <iframe id="ytPlayer" class="w-full h-full" src="https://www.youtube.com/embed/f-eh6xem59I?rel=0" title="دليلك لفهم نفسك والتوقف عن جلد الذات" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-600 to-teal-400 flex items-center justify-center text-white font-bold shadow">
+                                A
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm sm:text-base" data-i18n="videoTitle">دليلك لفهم نفسك والتوقف عن جلد الذات</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Abouawd Studio • 8:55</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium" data-i18n="videoHint">
+                            اختر محوراً من القائمة لاستعراض خلاصته المركزة
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Interactive Chapters & Deep Summary Panel -->
+                <div class="lg:col-span-5 bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-6 shadow-lg border border-slate-200 dark:border-slate-800 space-y-4">
+                    <h3 class="font-extrabold text-lg flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-brand-500"></i>
+                        <span data-i18n="chaptersHeader">المحاور الأربعة للفيديو</span>
+                    </h3>
+
+                    <!-- Chapter Buttons List -->
+                    <div id="chaptersList" class="space-y-2.5">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Active Chapter Detail Box -->
+                    <div id="activeChapterBox" class="mt-4 p-4 rounded-2xl bg-brand-50/70 dark:bg-slate-800/90 border border-brand-200 dark:border-slate-700 space-y-3 transition-all">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DESTRUCTIVE SELF-BLAME VS CONSTRUCTIVE SELF-ACCOUNTABILITY -->
+        <section id="comparison-section" class="space-y-6">
+            <div class="text-center max-w-3xl mx-auto space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400" data-i18n="sec2Tag">البوصلة المفاهيمية</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold" data-i18n="sec2Title">الفرق بين «جلد الذات الهادم» و«محاسبة النفس البناءة»</h2>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400" data-i18n="sec2Subtitle">
+                    التوقف عن جلد الذات لا يعني التسيب أو تبرير الأخطاء، بل يعني الانتقال من الهجوم على شخصك إلى تقويم سلوكك بحكمة.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Destructive Self-Flagellation Card -->
+                <div class="rounded-3xl bg-white dark:bg-slate-900 border-2 border-rose-200 dark:border-rose-900/50 p-6 sm:p-7 shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-rose-500 to-orange-500"></div>
+                    <div class="flex items-center gap-3.5 mb-5">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-rose-600 dark:text-rose-400" data-i18n="compBadTitle">جلد الذات (الهادم)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="compBadSub">محاكمة قاسية تستنزف الطاقة وتورث الإحباط</p>
+                        </div>
+                    </div>
+                    <ul id="compBadList" class="space-y-3.5 text-sm sm:text-base">
+                        <!-- Populated via JS -->
+                    </ul>
+                </div>
+
+                <!-- Constructive Self-Accountability Card -->
+                <div class="rounded-3xl bg-white dark:bg-slate-900 border-2 border-brand-200 dark:border-brand-900/60 p-6 sm:p-7 shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-500 to-emerald-500"></div>
+                    <div class="flex items-center gap-3.5 mb-5">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-100 dark:bg-brand-950/80 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-brand-600 dark:text-brand-400" data-i18n="compGoodTitle">محاسبة النفس (البناءة)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="compGoodSub">وعي ناضج يركز على التعلم والإصلاح المستمر</p>
+                        </div>
+                    </div>
+                    <ul id="compGoodList" class="space-y-3.5 text-sm sm:text-base">
+                        <!-- Populated via JS -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: INTERACTIVE SELF-ASSESSMENT QUIZ -->
+        <section id="quiz-section" class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200 dark:border-slate-800 space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400" data-i18n="sec3Tag">أداة تشخيصية تفاعلية</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-1" data-i18n="sec3Title">مقياس جلد الذات والوعي النفسي</h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="sec3Subtitle">أجب بصدق عن هذه المواقف الـ 6 لاكتشاف طبيعة حوارك الداخلي والحصول على توصية مخصصة.</p>
+                </div>
+                <div class="flex items-center gap-3 self-start md:self-center bg-slate-100 dark:bg-slate-800 px-4 py-2.5 rounded-2xl">
+                    <span class="text-xs font-semibold text-slate-500 dark:text-slate-400" data-i18n="quizProgressLabel">التقدم:</span>
+                    <span id="quizProgressCount" class="font-extrabold text-brand-600 dark:text-brand-400 text-sm">0 / 6</span>
+                </div>
+            </div>
+
+            <!-- Questions Container -->
+            <div id="quizQuestionsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Quiz Result Banner -->
+            <div id="quizResultBox" class="rounded-2xl p-6 bg-gradient-to-br from-slate-100 to-slate-200/70 dark:from-slate-800/90 dark:to-slate-900 border border-slate-200 dark:border-slate-700 flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 text-center lg:text-start">
+                    <h3 id="quizResultTitle" class="text-xl font-extrabold text-slate-800 dark:text-white" data-i18n="quizPendingTitle">أجب عن الأسئلة أعلاه لعرض النتيجة التحليلية</h3>
+                    <p id="quizResultDesc" class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl" data-i18n="quizPendingDesc">كل إجابة تساعدك على رصد صوتك الداخلي بوضوح وبدون أحكام مسبقة.</p>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                    <div id="quizScoreBadge" class="px-5 py-3 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+                        <div class="text-xs text-slate-400" data-i18n="quizScoreLabel">مؤشر القسوة الداخلية</div>
+                        <div id="quizScoreValue" class="text-2xl font-black text-brand-500">--%</div>
+                    </div>
+                    <button onclick="resetQuiz()" class="px-4 py-3 rounded-2xl bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 text-xs sm:text-sm font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span data-i18n="quizResetBtn">إعادة الاختبار</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: COGNITIVE REFRAMING LAB (تحويل الصوت الداخلي) -->
+        <section id="reframing-section" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400" data-i18n="sec4Tag">تطبيق عملي فوري</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mt-1" data-i18n="sec4Title">مختبر إعادة صياغة الأفكار (تحويل صوت الجلاد الداخلي)</h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="sec4Subtitle">اضغط على أي فكرة قاسية لترى كيف يحولها الإنسان الواعي إلى محاسبة متزنة ورحيمة، أو أضف فكرتك الخاصة.</p>
+                </div>
+            </div>
+
+            <!-- Preset Interactive Cards -->
+            <div id="reframeCardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Custom Thought Reframer Box -->
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200 dark:border-slate-800 space-y-5">
+                <h3 class="font-extrabold text-lg flex items-center gap-2.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i>
+                    <span data-i18n="customReframeTitle">جرب بنفسك: أعد صياغة فكرة تلوم نفسك عليها الآن</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-rose-500 mb-2" data-i18n="inputHarshLabel">١. الفكرة القاسية (صوت جلد الذات):</label>
+                        <input id="customHarshInput" type="text" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" data-i18n-placeholder="inputHarshPlaceholder" placeholder="مثال: ضيعت وقتي اليوم وأنا شخص عديم الإرادة...">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-500 mb-2" data-i18n="inputBalancedLabel">٢. الصياغة الواعية المتزنة (محاسبة بدون تحطيم):</label>
+                        <input id="customBalancedInput" type="text" class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500" data-i18n-placeholder="inputBalancedPlaceholder" placeholder="مثال: تشتت انتباهي اليوم، سأحدد السبب وأبدأ بمهمة صغيرة غداً...">
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <button onclick="generateSuggestedReframe()" class="px-4 py-2.5 rounded-xl bg-purple-100 hover:bg-purple-200 dark:bg-purple-950/80 dark:hover:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs sm:text-sm font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span data-i18n="suggestReframeBtn">اقترح صياغة متزنة تلقائياً</span>
+                    </button>
+                    <button onclick="saveCustomReframe()" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-brand-500/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i>
+                        <span data-i18n="saveReframeBtn">إضافة إلى سجل وعيي الذاتي</span>
+                    </button>
+                </div>
+
+                <!-- Saved Custom Reframes List -->
+                <div id="savedReframesList" class="space-y-2.5 pt-2">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: BREATHING CALM EXERCISE & DAILY RECOVERY HABITS -->
+        <section id="toolkit-section" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <!-- Calming Breathing Visualizer (5 cols) -->
+            <div class="lg:col-span-5 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 shadow-lg border border-slate-200 dark:border-slate-800 flex flex-col justify-between items-center text-center space-y-6">
+                <div class="space-y-1">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400" data-i18n="breathTag">إيقاف دوامة اللوم اللحظي</span>
+                    <h3 class="text-xl font-extrabold" data-i18n="breathTitle">تمرين التنفس لتهدئة الناقد الداخلي</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400" data-i18n="breathSub">عندما تشعر بموجة قسوة على نفسك، خذ دقيقة لتهدئة جهازك العصبي قبل التفكير.</p>
+                </div>
+
+                <!-- Animated Circle -->
+                <div class="relative my-6 flex items-center justify-center h-44 w-44">
+                    <div id="breathCircle" class="breath-circle w-32 h-32 rounded-full bg-gradient-to-tr from-brand-500/30 to-purple-500/30 border-2 border-brand-400 flex flex-col items-center justify-center p-4">
+                        <span id="breathStatusText" class="font-extrabold text-sm sm:text-base text-brand-700 dark:text-brand-300" data-i18n="breathReady">مستعد؟</span>
+                        <span id="breathTimerText" class="text-xs text-slate-500 dark:text-slate-400 mt-1">4 - 4 - 4</span>
+                    </div>
+                </div>
+
+                <button id="breathToggleBtn" onclick="toggleBreathing()" class="w-full py-3 rounded-2xl bg-slate-900 hover:bg-slate-800 dark:bg-brand-600 dark:hover:bg-brand-500 text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md">
+                    <i id="breathBtnIcon" class="fa-solid fa-play"></i>
+                    <span id="breathBtnLabel" data-i18n="breathStartBtn">ابدأ تمرين الهدوء (دقيقة واحدة)</span>
+                </button>
+            </div>
+
+            <!-- Daily Action Plan Checklist (7 cols) -->
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 shadow-lg border border-slate-200 dark:border-slate-800 space-y-5">
+                <div class="flex items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400" data-i18n="habitsTag">خطوات عملية يومية</span>
+                        <h3 class="text-xl font-extrabold mt-0.5" data-i18n="habitsTitle">قائمة العادات الخمس للتعافي من جلد الذات</h3>
+                    </div>
+                    <div class="px-3.5 py-1.5 rounded-xl bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-extrabold text-xs sm:text-sm">
+                        <span id="habitsProgressBadge">0 / 5</span>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400" data-i18n="habitsDesc">
+                    حدد الخطوات التي طبقتها اليوم لتعزيز التصالح الذاتي وبناء مرونتك النفسية:
+                </p>
+
+                <div id="habitsChecklistContainer" class="space-y-3">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER WITH MANDATORY DESIGN CREDIT -->
+    <footer class="relative z-10 mt-12 border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center text-center space-y-4">
+            <!-- Channel & Video Info -->
+            <div class="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                <span data-i18n="footerInspired">تطبيق تفاعلي مبني على محتوى فيديو: «دليلك لفهم نفسك والتوقف عن جلد الذات»</span>
+                <span>•</span>
+                <a href="https://youtu.be/f-eh6xem59I?si=Xt4fApSa-p4jG5we" target="_blank" rel="noopener noreferrer" class="font-bold text-brand-600 dark:text-brand-400 hover:underline">
+                    Abouawd Studio
+                </a>
+            </div>
+
+            <!-- Mandatory Credit Banner -->
+            <div class="w-full max-w-2xl rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-brand-500/10 via-purple-500/10 to-brand-500/10 border border-brand-500/30 dark:border-brand-400/30 shadow-sm">
+                <p class="text-base sm:text-lg font-extrabold bg-gradient-to-r from-brand-600 via-purple-600 to-teal-600 dark:from-brand-300 dark:via-purple-300 dark:to-teal-300 bg-clip-text text-transparent">
+                    تصميم محمد عوض خير بمساعدة Gemini 4 Argon
+                </p>
+                <p id="footerCreditSub" class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Designed by Mohamed Awad Khair with the help of Gemini 4 Argon
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- APPLICATION LOGIC & BILINGUAL DICTIONARY -->
+    <script>
+        // Current State
+        let currentLang = 'ar';
+        let isDark = true;
+        let currentQuoteIndex = 0;
+        let activeChapterIndex = 0;
+        let quizAnswers = [null, null, null, null, null, null];
+        let flippedCards = {};
+        let completedHabits = [false, false, false, false, false];
+        let customReframes = [];
+        let breathingInterval = null;
+        let isBreathing = false;
+
+        // Complete Bilingual Content Dictionary
+        const i18nData = {
+            ar: {
+                navTitle: "توازن الذات",
+                navSubtitle: "دليلك التفاعلي لفهم نفسك والتوقف عن جلد الذات",
+                navVideo: "الفيديو والمحاور",
+                navComparison: "الفرق الجوهري",
+                navQuiz: "مقياس جلد الذات",
+                navReframe: "مختبر الأفكار",
+                navToolkit: "خطة التعافي",
+                heroBadge: "رحلة تفاعلية من محتوى قناة Abouawd Studio",
+                heroTitle: "دليلك لفهم نفسك والتوقف عن جلد الذات",
+                heroDesc: "كثيراً ما نخلط بين «محاسبة النفس» التي تدفعنا للنمو، وبين «جلد الذات» الذي يستنزف طاقتنا ويشل حركتنا. استكشف في هذا التطبيق التفاعلي جذور القسوة الداخلية، واختبر مستوى وعيك الذاتي، وتدرب عملياً على بناء علاقة صحية ومتزنة مع نفسك.",
+                heroCtaPrimary: "ابدأ اختبار فهم الذات",
+                heroCtaSecondary: "شاهد الفيديو والملخص (8:55)",
+                insightCardHeader: "قاعدة ذهبية للوعي النفسي",
+                insightCardSub: "اضغط لتبديل الحكمة التأملية",
+                nextQuoteBtn: "حكمة أخرى",
+                statPillars: "محاور أساسية",
+                statQuestions: "أسئلة تشخيصية",
+                statDuration: "دقائق من الوعي",
+                sec1Tag: "المصدر المرئي والخريطة الذهنية",
+                sec1Title: "الفيديو التفاعلي ومحاور الفهم العميق",
+                openYoutubeLink: "فتح الفيديو مباشرة على يوتيوب",
+                videoTitle: "دليلك لفهم نفسك والتوقف عن جلد الذات",
+                videoHint: "اختر محوراً من القائمة لاستعراض خلاصته المركزة",
+                chaptersHeader: "المحاور الأربعة للفيديو",
+                sec2Tag: "البوصلة المفاهيمية",
+                sec2Title: "الفرق بين «جلد الذات الهادم» و«محاسبة النفس البناءة»",
+                sec2Subtitle: "التوقف عن جلد الذات لا يعني التسيب أو تبرير الأخطاء، بل يعني الانتقال من الهجوم على شخصك إلى تقويم سلوكك بحكمة.",
+                compBadTitle: "جلد الذات (الهادم)",
+                compBadSub: "محاكمة قاسية تستنزف الطاقة وتورث الإحباط",
+                compGoodTitle: "محاسبة النفس (البناءة)",
+                compGoodSub: "وعي ناضج يركز على التعلم والإصلاح المستمر",
+                sec3Tag: "أداة تشخيصية تفاعلية",
+                sec3Title: "مقياس جلد الذات والوعي النفسي",
+                sec3Subtitle: "أجب بصدق عن هذه المواقف الـ 6 لاكتشاف طبيعة حوارك الداخلي والحصول على توصية مخصصة.",
+                quizProgressLabel: "التقدم:",
+                quizPendingTitle: "أجب عن الأسئلة أعلاه لعرض النتيجة التحليلية",
+                quizPendingDesc: "كل إجابة تساعدك على رصد صوتك الداخلي بوضوح وبدون أحكام مسبقة.",
+                quizScoreLabel: "مؤشر القسوة الداخلية",
+                quizResetBtn: "إعادة الاختبار",
+                sec4Tag: "تطبيق عملي فوري",
+                sec4Title: "مختبر إعادة صياغة الأفكار (تحويل صوت الجلاد الداخلي)",
+                sec4Subtitle: "اضغط على أي فكرة قاسية لترى كيف يحولها الإنسان الواعي إلى محاسبة متزنة ورحيمة، أو أضف فكرتك الخاصة.",
+                customReframeTitle: "جرب بنفسك: أعد صياغة فكرة تلوم نفسك عليها الآن",
+                inputHarshLabel: "١. الفكرة القاسية (صوت جلد الذات):",
+                inputHarshPlaceholder: "مثال: ضيعت وقتي اليوم وأنا شخص عديم الإرادة...",
+                inputBalancedLabel: "٢. الصياغة الواعية المتزنة (محاسبة بدون تحطيم):",
+                inputBalancedPlaceholder: "مثال: تشتت انتباهي اليوم، سأحدد السبب وأبدأ بمهمة صغيرة غداً...",
+                suggestReframeBtn: "اقترح صياغة متزنة تلقائياً",
+                saveReframeBtn: "إضافة إلى سجل وعيي الذاتي",
+                breathTag: "إيقاف دوامة اللوم اللحظي",
+                breathTitle: "تمرين التنفس لتهدئة الناقد الداخلي",
+                breathSub: "عندما تشعر بموجة قسوة على نفسك، خذ دقيقة لتهدئة جهازك العصبي قبل التفكير.",
+                breathReady: "مستعد؟",
+                breathStartBtn: "ابدأ تمرين الهدوء",
+                breathStopBtn: "إيقاف التمرين",
+                habitsTag: "خطوات عملية يومية",
+                habitsTitle: "قائمة العادات الخمس للتعافي من جلد الذات",
+                habitsDesc: "حدد الخطوات التي طبقتها اليوم لتعزيز التصالح الذاتي وبناء مرونتك النفسية:",
+                footerInspired: "تطبيق تفاعلي مبني على محتوى فيديو: «دليلك لفهم نفسك والتوقف عن جلد الذات»",
+                quotes: [
+                    "«أنت لست أخطاءك؛ الخطأ حدث عابر في سلوكك يمكن إصلاحه، وليس وصمة دائمة في هويتك.»",
+                    "«جلد الذات يوهمك أنك تهتم بتطوير نفسك، لكنه في الحقيقة يسرق منك الطاقة اللازمة للتغيير.»",
+                    "«فهمك لضعفك البشري هو أول خطوة نحو القوة الحقيقية والاتزان النفسي.»",
+                    "«تحدث مع نفسك عند التعثر كما تتحدث مع صديق عزيز تحب له الخير وتريد نهوضه.»"
+                ],
+                chapters: [
+                    {
+                        time: "00:00",
+                        seconds: 0,
+                        title: "١. وهم القسوة: لماذا نجلد أنفسنا؟",
+                        summary: "يبدأ الدليل بكشف الخدعة النفسية الشائعة: الاعتقاد بأن القسوة الشديدة على النفس هي الطريق الوحيد للانضباط. في الواقع، اللوم المفرط يرفع التوتر ويؤدي إلى المماطلة والهروب.",
+                        takeaway: "القاعدة الأولى: القسوة لا تصنع إنجازاً مستداماً، بل تصنع خوفاً من المحاولة."
+                    },
+                    {
+                        time: "02:15",
+                        seconds: 135,
+                        title: "٢. الجذور الخفية لجلد الذات",
+                        summary: "استعراض الأسباب العميقة مثل المثالية الزائفة (الكل أو لا شيء)، المقارنة المستمرة بالآخرين، وتبني أصوات النقد القديمة حتى أصبحت صوتاً داخلياً تلقائياً.",
+                        takeaway: "القاعدة الثانية: معرفة مصدر الصوت الناقد بداخلك يضعف سيطرته عليك فوراً."
+                    },
+                    {
+                        time: "04:40",
+                        seconds: 280,
+                        title: "٣. فن فهم النفس والتصالح مع البشرية",
+                        summary: "كيف تراقب مشاعرك وأفكارك دون أن تندمج معها؟ الفهم الحقيقي للنفس يتطلب قبول حقيقة أن النقص والتعثر جزء أصيل من التجربة الإنسانية والتعلم.",
+                        takeaway: "القاعدة الثالثة: افصل دائماً بين قيمتك كإنسان وبين نتيجة عملك في موقف معين."
+                    },
+                    {
+                        time: "06:50",
+                        seconds: 410,
+                        title: "٤. خطوات عملية للتوقف عن جلد الذات",
+                        summary: "الانتقال من التعميم السلبي («أنا دائماً أفشل») إلى التحديد الواقعي («هذه الخطوة تحتاج تعديلاً»)، وممارسة التعاطف الذاتي الواعي الذي يدفع للعمل لا الكسل.",
+                        takeaway: "القاعدة الرابعة: استبدل سؤال «لماذا أنا هكذا؟» بسؤال «ما الخطوة الصغيرة القادمة؟»"
+                    }
+                ],
+                compBad: [
+                    "يهاجم الهوية والشخصية: «أنا فاشل ولا فائدة مني».",
+                    "يعتمد على التعميم والتضخيم واستدعاء كل أخطاء الماضي.",
+                    "يستنزف الطاقة النفسية ويؤدي للشلل أو الاستسلام السريع.",
+                    "ينبع من الخوف والغضب والمقارنة القاسية مع الآخرين."
+                ],
+                compGood: [
+                    "يركز على السلوك المحدد: «أخطأت في التقدير هنا وسأعدله».",
+                    "يتعامل مع الموقف بحجمه الحقيقي ويستخرج الدرس المستفاد.",
+                    "يحفظ الطاقة النفسية ويوجهها نحو الحلول والخطوة التالية.",
+                    "ينبع من الوعي، المسؤولية الهادئة، والرحمة بالنفس."
+                ],
+                quizQuestions: [
+                    {
+                        q: "١. عندما تقع في خطأ غير مقصود في العمل أو الدراسة:",
+                        options: [
+                            { text: "أصلح الخطأ بهدوء وأعتبره درساً طبيعياً", score: 0 },
+                            { text: "أشعر بالضيق لبعض الوقت ثم أتجاوز الأمر", score: 1 },
+                            { text: "أظل ألوم نفسي لأيام وأصف نفسي بالغباء", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "٢. إذا لم تنجز كامل خطتك اليومية كما رسمتها:",
+                        options: [
+                            { text: "أثمن ما أنجزته وأعدل خطة الغد بمرونة", score: 0 },
+                            { text: "أشعر بالتقصير وأضغط على نفسي بشدة", score: 1 },
+                            { text: "أعتبر اليوم كله ضائعاً وأشعر بالإحباط التام", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "٣. كيف تقارن نفسك بإنجازات الآخرين؟",
+                        options: [
+                            { text: "ألهم نفسي بهم مع إدراك اختلاف ظروفي ورحلتي", score: 0 },
+                            { text: "أقارن أحياناً وأشعر أنني متأخر عنهم", score: 1 },
+                            { text: "أشعر دائماً أن الجميع أفضل مني وأني أقل منهم", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "٤. عندما يوجه إليك شخص ملاحظة أو نقداً:",
+                        options: [
+                            { text: "آخذ الجانب المفيد منه دون أن تهتز قيمتي الذاتية", score: 0 },
+                            { text: "أتوتر داخلياً وأفكر فيه طوال اليوم", score: 1 },
+                            { text: "أعتبره دليلاً قاطعاً على أنني شخص غير كفء", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "٥. ما هي نبرة حوارك الداخلي المعتادة عند التعب؟",
+                        options: [
+                            { text: "نبرة متفهمة تمنحني حق الراحة واستعادة النشاط", score: 0 },
+                            { text: "نبرة مترددة بين الراحة والشعور بالذنب", score: 1 },
+                            { text: "نبرة قاسية تتهمني بالكسل والضعف", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "٦. نظرتك لأخطاء الماضي التي مرت عليها سنوات:",
+                        options: [
+                            { text: "تصالحت معها كجزء من نضجي وخبرتي الحالية", score: 0 },
+                            { text: "أتذكرها أحياناً بندم خفيف", score: 1 },
+                            { text: "أستحضرها باستمرار وأحاكم نفسي عليها كأنها حدثت اليوم", score: 2 }
+                        ]
+                    }
+                ],
+                reframeCards: [
+                    {
+                        category: "الكمالية الزائفة",
+                        harsh: "«بما أنني لم أنفذ الخطة بنسبة 100%، فأنا شخص فاشل ولا ألتزم بشيء.»",
+                        balanced: "«إنجاز 60% أفضل بكثير من التوقف التام؛ الاستمرارية الهادئة أهم من الكمال المستحيل.»"
+                    },
+                    {
+                        category: "المقارنة بالآخرين",
+                        harsh: "«الجميع سبقوني وحققوا أهدافهم وأنا وحدي المتأخر في كل شيء.»",
+                        balanced: "«لكل إنسان توقيته وظروفه الخاصة؛ تركيزي الآن هو أن أكون اليوم أفضل من أمسي.»"
+                    },
+                    {
+                        category: "تضخيم العثرات",
+                        harsh: "«أخطأت في هذا القرار، لقد دمرت كل شيء ولن أنجح أبداً.»",
+                        balanced: "«اتخذت قراراً بناءً على معرفتي وقتها، والآن لدي خبرة أوضح لإصلاح المسار.»"
+                    }
+                ],
+                habits: [
+                    "رصدت فكرة قاسية تجاه نفسي اليوم وأعدت صياغتها بهدوء.",
+                    "فصلت بين خطئي في السلوك وبين قيمتي وكرامتي كإنسان.",
+                    "توقفت عن مقارنة فصلي الأول بالفصل العشرين من حياة غيري.",
+                    "كافأت نفسي على خطوة صغيرة أنجزتها بدلاً من التركيز فقط على النواقص.",
+                    "منحت نفسي وقتاً للراحة دون شعور بالذنب أو تأنيب الضمير."
+                ]
+            },
+            en: {
+                navTitle: "Self-Harmony",
+                navSubtitle: "Interactive Guide to Understanding Yourself & Stopping Self-Blame",
+                navVideo: "Video & Pillars",
+                navComparison: "Key Difference",
+                navQuiz: "Self-Blame Quiz",
+                navReframe: "Thought Lab",
+                navToolkit: "Recovery Plan",
+                heroBadge: "Interactive Experience from Abouawd Studio",
+                heroTitle: "Your Guide to Understanding Yourself & Stopping Self-Criticism",
+                heroDesc: "We often confuse 'constructive self-accountability' that fuels growth with 'destructive self-flagellation' that drains our energy and paralyzes action. Explore the roots of inner harshness, test your self-awareness, and practice building a compassionate, balanced relationship with yourself.",
+                heroCtaPrimary: "Start Self-Awareness Quiz",
+                heroCtaSecondary: "Watch Video & Summary (8:55)",
+                insightCardHeader: "Golden Rule of Self-Awareness",
+                insightCardSub: "Click to cycle reflective insights",
+                nextQuoteBtn: "Next Insight",
+                statPillars: "Core Pillars",
+                statQuestions: "Diagnostic Items",
+                statDuration: "Mins of Clarity",
+                sec1Tag: "Video Source & Mindmap",
+                sec1Title: "Interactive Video & Deep Understanding Pillars",
+                openYoutubeLink: "Watch Directly on YouTube",
+                videoTitle: "Your Guide to Understanding Yourself & Stopping Self-Criticism",
+                videoHint: "Select any pillar on the side to explore its key takeaways",
+                chaptersHeader: "The 4 Core Video Pillars",
+                sec2Tag: "Conceptual Compass",
+                sec2Title: "Destructive Self-Blame vs. Constructive Self-Accountability",
+                sec2Subtitle: "Stopping self-flagellation doesn't mean ignoring mistakes—it means shifting from attacking your identity to improving your behavior wisely.",
+                compBadTitle: "Self-Flagellation (Destructive)",
+                compBadSub: "Harsh inner trial that drains energy and breeds despair",
+                compGoodTitle: "Self-Accountability (Constructive)",
+                compGoodSub: "Mature awareness focused on learning and steady improvement",
+                sec3Tag: "Interactive Diagnostic Tool",
+                sec3Title: "Self-Criticism & Inner Awareness Scale",
+                sec3Subtitle: "Answer these 6 real-life scenarios honestly to discover your inner dialogue style and receive tailored guidance.",
+                quizProgressLabel: "Progress:",
+                quizPendingTitle: "Complete the questions above to view your analysis",
+                quizPendingDesc: "Each answer helps you observe your inner voice clearly and without judgment.",
+                quizScoreLabel: "Inner Harshness Index",
+                quizResetBtn: "Reset Quiz",
+                sec4Tag: "Hands-On Practice",
+                sec4Title: "Cognitive Reframing Lab (Transforming the Inner Critic)",
+                sec4Subtitle: "Click any harsh thought card to flip it into balanced self-accountability, or reframe your own thought below.",
+                customReframeTitle: "Try It Yourself: Reframe a Thought You Are Blaming Yourself For",
+                inputHarshLabel: "1. Harsh Thought (Inner Critic Voice):",
+                inputHarshPlaceholder: "e.g., I wasted time today, I have zero willpower...",
+                inputBalancedLabel: "2. Balanced & Aware Reframe (Accountability without Crushing):",
+                inputBalancedPlaceholder: "e.g., I got distracted today; I'll identify why and start with one small task...",
+                suggestReframeBtn: "Auto-Suggest Balanced Thought",
+                saveReframeBtn: "Add to My Awareness Log",
+                breathTag: "Stop the Blame Spiral Instantly",
+                breathTitle: "Breathing Exercise to Calm the Inner Critic",
+                breathSub: "When a wave of self-blame hits, take 60 seconds to calm your nervous system before evaluating.",
+                breathReady: "Ready?",
+                breathStartBtn: "Start Calming Exercise",
+                breathStopBtn: "Stop Exercise",
+                habitsTag: "Daily Practical Steps",
+                habitsTitle: "5 Daily Habits to Recover from Self-Flagellation",
+                habitsDesc: "Check off the steps you practiced today to strengthen self-peace and resilience:",
+                footerInspired: "Interactive Web App based on the video: 'Your Guide to Understanding Yourself & Stopping Self-Blame'",
+                quotes: [
+                    "“You are not your mistakes; a mistake is a temporary event in your behavior that can be fixed, not a permanent stain on your identity.”",
+                    "“Self-flagellation tricks you into thinking you care about growth, while actually stealing the energy needed to change.”",
+                    "“Understanding your human vulnerability is the very first step toward genuine strength and emotional balance.”",
+                    "“Speak to yourself when you stumble the way you would speak to a dear friend whom you wish to see rise again.”"
+                ],
+                chapters: [
+                    {
+                        time: "00:00",
+                        seconds: 0,
+                        title: "1. The Illusion of Harshness: Why Do We Blame Ourselves?",
+                        summary: "Uncovering the common psychological trap: believing that being ruthless with yourself is the only way to stay disciplined. In reality, excessive blame spikes stress and fuels procrastination.",
+                        takeaway: "Key Takeaway 1: Harshness does not build sustainable success; it builds fear of trying."
+                    },
+                    {
+                        time: "02:15",
+                        seconds: 135,
+                        title: "2. Hidden Roots of Self-Flagellation",
+                        summary: "Exploring deep causes such as all-or-nothing perfectionism, toxic comparison with others, and internalizing past critical voices until they feel like your own.",
+                        takeaway: "Key Takeaway 2: Recognizing the origin of your inner critic immediately weakens its grip over you."
+                    },
+                    {
+                        time: "04:40",
+                        seconds: 280,
+                        title: "3. The Art of Self-Understanding & Accepting Humanity",
+                        summary: "How to observe your emotions and thoughts without fusing with them. True self-understanding requires accepting that imperfection is a natural part of human learning.",
+                        takeaway: "Key Takeaway 3: Always separate your intrinsic worth as a human from the outcome of a single task."
+                    },
+                    {
+                        time: "06:50",
+                        seconds: 410,
+                        title: "4. Practical Steps to Stop Self-Blame",
+                        summary: "Moving from negative overgeneralization ('I always fail') to realistic specificity ('This step needs adjustment'), and practicing mindful self-compassion that drives action.",
+                        takeaway: "Key Takeaway 4: Replace 'Why am I like this?' with 'What is my next small constructive step?'"
+                    }
+                ],
+                compBad: [
+                    "Attacks identity & self-worth: 'I am a failure and good for nothing.'",
+                    "Relies on overgeneralization, exaggeration, and dragging up past mistakes.",
+                    "Drains mental energy and leads to paralysis or giving up.",
+                    "Stems from fear, anger, and unfair comparison with others."
+                ],
+                compGood: [
+                    "Focuses on specific behavior: 'I misjudged this step and will adjust it.'",
+                    "Keeps the situation in proportion and extracts the practical lesson.",
+                    "Preserves mental energy and channels it toward solutions.",
+                    "Stems from awareness, calm responsibility, and self-compassion."
+                ],
+                quizQuestions: [
+                    {
+                        q: "1. When you make an unintended mistake at work or study:",
+                        options: [
+                            { text: "I fix it calmly and treat it as a normal learning step", score: 0 },
+                            { text: "I feel upset for a while, then move on", score: 1 },
+                            { text: "I blame myself for days and call myself stupid", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "2. If you don't complete 100% of your daily schedule:",
+                        options: [
+                            { text: "I value what I achieved and flexibly adjust tomorrow's plan", score: 0 },
+                            { text: "I feel guilty and pressure myself harshly", score: 1 },
+                            { text: "I consider the whole day ruined and feel total frustration", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "3. How do you react when seeing others' achievements?",
+                        options: [
+                            { text: "I feel inspired while honoring my own unique pace and path", score: 0 },
+                            { text: "I sometimes compare and feel like I am falling behind", score: 1 },
+                            { text: "I constantly feel everyone is better and I am inadequate", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "4. When someone gives you feedback or criticism:",
+                        options: [
+                            { text: "I take the useful part without losing my self-worth", score: 0 },
+                            { text: "I get tense inside and overthink it all day", score: 1 },
+                            { text: "I take it as proof that I am completely incompetent", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "5. What is your inner voice like when you feel exhausted?",
+                        options: [
+                            { text: "Understanding—allowing me to rest and recharge", score: 0 },
+                            { text: "Torn between resting and feeling guilty", score: 1 },
+                            { text: "Harsh—accusing me of being lazy and weak", score: 2 }
+                        ]
+                    },
+                    {
+                        q: "6. How do you view mistakes from years ago?",
+                        options: [
+                            { text: "I made peace with them as part of my growth and maturity", score: 0 },
+                            { text: "I occasionally recall them with mild regret", score: 1 },
+                            { text: "I replay them constantly and punish myself as if they happened today", score: 2 }
+                        ]
+                    }
+                ],
+                reframeCards: [
+                    {
+                        category: "All-or-Nothing Perfectionism",
+                        harsh: "“Since I didn't execute the plan 100%, I am a failure and can never stick to anything.”",
+                        balanced: "“Completing 60% is far better than quitting; calm consistency matters more than impossible perfection.”"
+                    },
+                    {
+                        category: "Unfair Comparison",
+                        harsh: "“Everyone else has achieved their goals while I am behind in everything.”",
+                        balanced: "“Everyone has their own timeline and circumstances; my focus is to be one step better than yesterday.”"
+                    },
+                    {
+                        category: "Magnifying Setbacks",
+                        harsh: "“I made a wrong decision here—I ruined everything and will never succeed.”",
+                        balanced: "“I made a decision based on what I knew then; now I have clearer insight to course-correct.”"
+                    }
+                ],
+                habits: [
+                    "Caught a harsh inner thought today and consciously reframed it with calm clarity.",
+                    "Separated a mistake in my behavior from my core worth and dignity as a person.",
+                    "Stopped comparing my chapter 1 with someone else's chapter 20.",
+                    "Acknowledged a small win today instead of fixating only on what was missing.",
+                    "Allowed myself time to rest without guilt or self-punishment."
+                ]
+            }
+        };
+
+        // Initialize App
+        function initApp() {
+            renderAll();
+        }
+
+        // Toggle Dark/Light Theme
+        function toggleTheme() {
+            isDark = !isDark;
+            const htmlEl = document.documentElement;
+            const iconEl = document.getElementById('themeIcon');
+            if (isDark) {
+                htmlEl.classList.add('dark');
+                iconEl.className = 'fa-solid fa-sun text-lg';
+            } else {
+                htmlEl.classList.remove('dark');
+                iconEl.className = 'fa-solid fa-moon text-lg text-slate-700';
+            }
+        }
+
+        // Toggle Arabic / English Language
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const htmlEl = document.documentElement;
+            htmlEl.lang = currentLang;
+            htmlEl.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.getElementById('langBtnText').textContent = currentLang === 'ar' ? 'English' : 'عربي';
+            renderAll();
+        }
+
+        // Render all dynamic and static elements according to current language
+        function renderAll() {
+            const dict = i18nData[currentLang];
+
+            // Static text nodes with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.textContent = dict[key];
+                }
+            });
+
+            // Input placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (dict[key]) {
+                    el.placeholder = dict[key];
+                }
+            });
+
+            // Render Quote
+            document.getElementById('heroQuoteText').textContent = dict.quotes[currentQuoteIndex];
+
+            // Render Chapters
+            renderChapters();
+
+            // Render Comparison Lists
+            renderComparison();
+
+            // Render Quiz
+            renderQuiz();
+
+            // Render Reframe Cards
+            renderReframeCards();
+
+            // Render Saved Custom Reframes
+            renderSavedReframes();
+
+            // Render Habits Checklist
+            renderHabits();
+        }
+
+        function nextQuote() {
+            const quotes = i18nData[currentLang].quotes;
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            const quoteEl = document.getElementById('heroQuoteText');
+            quoteEl.style.opacity = '0';
+            setTimeout(() => {
+                quoteEl.textContent = quotes[currentQuoteIndex];
+                quoteEl.style.opacity = '1';
+            }, 150);
+        }
+
+        // Render Video Chapters & Active Pillar
+        function renderChapters() {
+            const chapters = i18nData[currentLang].chapters;
+            const listEl = document.getElementById('chaptersList');
+            listEl.innerHTML = chapters.map((ch, idx) => {
+                const isActive = idx === activeChapterIndex;
+                return `
+                    <button onclick="selectChapter(${idx})" class="w-full text-start p-3.5 rounded-2xl border transition-all flex items-center justify-between gap-3 ${
+                        isActive
+                            ? 'bg-brand-600 text-white border-brand-500 shadow-md shadow-brand-500/20'
+                            : 'bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/60 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-200'
+                    }">
+                        <div class="flex items-center gap-3">
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold ${
+                                isActive ? 'bg-white/20 text-white' : 'bg-brand-100 dark:bg-slate-700 text-brand-700 dark:text-brand-300'
+                            }">${ch.time}</span>
+                            <span class="font-bold text-sm sm:text-base">${ch.title}</span>
+                        </div>
+                        <i class="fa-solid ${currentLang === 'ar' ? 'fa-chevron-left' : 'fa-chevron-right'} text-xs opacity-75"></i>
+                    </button>
+                `;
+            }).join('');
+
+            const active = chapters[activeChapterIndex];
+            const boxEl = document.getElementById('activeChapterBox');
+            const jumpLabel = currentLang === 'ar' ? 'تشغيل هذا المحور في الفيديو' : 'Play this chapter in video';
+            boxEl.innerHTML = `
+                <div class="flex items-center justify-between gap-2">
+                    <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600 dark:text-brand-400">${active.title}</span>
+                    <button onclick="seekVideo(${active.seconds})" class="text-xs font-bold px-3 py-1 rounded-lg bg-brand-600 hover:bg-brand-500 text-white flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-play text-[10px]"></i>
+                        <span>${jumpLabel} (${active.time})</span>
+                    </button>
+                </div>
+                <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">${active.summary}</p>
+                <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-brand-200/80 dark:border-slate-700 text-xs sm:text-sm font-bold text-brand-700 dark:text-brand-300 flex items-center gap-2">
+                    <i class="fa-solid fa-star text-amber-400"></i>
+                    <span>${active.takeaway}</span>
+                </div>
+            `;
+        }
+
+        function selectChapter(idx) {
+            activeChapterIndex = idx;
+            renderChapters();
+        }
+
+        function seekVideo(seconds) {
+            const iframe = document.getElementById('ytPlayer');
+            iframe.src = `https://www.youtube.com/embed/f-eh6xem59I?start=${seconds}&autoplay=1&rel=0`;
+        }
+
+        // Render Comparison Lists
+        function renderComparison() {
+            const dict = i18nData[currentLang];
+            document.getElementById('compBadList').innerHTML = dict.compBad.map(item => `
+                <li class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                    <span class="text-slate-700 dark:text-slate-300">${item}</span>
+                </li>
+            `).join('');
+
+            document.getElementById('compGoodList').innerHTML = dict.compGood.map(item => `
+                <li class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-950 text-brand-600 dark:text-brand-400 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                        <i class="fa-solid fa-check"></i>
+                    </span>
+                    <span class="text-slate-700 dark:text-slate-300">${item}</span>
+                </li>
+            `).join('');
+        }
+
+        // Render Interactive Quiz
+        function renderQuiz() {
+            const questions = i18nData[currentLang].quizQuestions;
+            const container = document.getElementById('quizQuestionsContainer');
+
+            container.innerHTML = questions.map((item, qIdx) => {
+                return `
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-3">
+                        <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100">${item.q}</h4>
+                        <div class="space-y-2">
+                            ${item.options.map((opt, oIdx) => {
+                                const isSelected = quizAnswers[qIdx] === opt.score;
+                                return `
+                                    <button onclick="answerQuiz(${qIdx}, ${opt.score})" class="w-full text-start px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-medium border transition-all flex items-center justify-between gap-2 ${
+                                        isSelected
+                                            ? 'bg-brand-600 text-white border-brand-500 font-bold shadow-sm'
+                                            : 'bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                                    }">
+                                        <span>${opt.text}</span>
+                                        <i class="fa-regular ${isSelected ? 'fa-circle-check text-white' : 'fa-circle text-slate-400'}"></i>
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            updateQuizSummary();
+        }
+
+        function answerQuiz(qIdx, score) {
+            quizAnswers[qIdx] = score;
+            renderQuiz();
+        }
+
+        function resetQuiz() {
+            quizAnswers = [null, null, null, null, null, null];
+            renderQuiz();
+        }
+
+        function updateQuizSummary() {
+            const answeredCount = quizAnswers.filter(a => a !== null).length;
+            document.getElementById('quizProgressCount').textContent = `${answeredCount} / 6`;
+
+            const titleEl = document.getElementById('quizResultTitle');
+            const descEl = document.getElementById('quizResultDesc');
+            const scoreValEl = document.getElementById('quizScoreValue');
+
+            if (answeredCount === 0) {
+                const dict = i18nData[currentLang];
+                titleEl.textContent = dict.quizPendingTitle;
+                descEl.textContent = dict.quizPendingDesc;
+                scoreValEl.textContent = '--%';
+                return;
+            }
+
+            const totalScore = quizAnswers.reduce((acc, v) => acc + (v || 0), 0);
+            const maxPossibleSoFar = answeredCount * 2;
+            const percentage = Math.round((totalScore / 12) * 100);
+            scoreValEl.textContent = `${percentage}%`;
+
+            if (currentLang === 'ar') {
+                if (percentage <= 30) {
+                    titleEl.textContent = "🌟 مستوى متزن ومتصالح مع الذات";
+                    descEl.textContent = "تمتلك وعياً ناضجاً يفرق بين الخطأ كفرصة للتعلم وبين قيمتك كإنسان. استمر في تعزيز هذا الحوار الداخلي الداعم.";
+                } else if (percentage <= 65) {
+                    titleEl.textContent = "⚖️ منطقة التذبذب بين المحاسبة وجلد الذات";
+                    descEl.textContent = "أنت تحاول فهم نفسك، لكنك تقع أحياناً في فخ المقارنة أو القسوة عند الضغوط. تدرب يومياً على إعادة صياغة أفكارك التلقائية.";
+                } else {
+                    titleEl.textContent = "🚨 مؤشر مرتفع لجلد الذات والقسوة الداخلية";
+                    descEl.textContent = "صوتك الداخلي قاسٍ جداً ويستنزف طاقتك النفسية. تذكر رسالة الفيديو: التغيير الحقيقي يبدأ بالتفهم والخطوات الهادئة لا بتحطيم النفس.";
+                }
+            } else {
+                if (percentage <= 30) {
+                    titleEl.textContent = "🌟 Balanced & Self-Compassionate Awareness";
+                    descEl.textContent = "You have a mature mindset that separates behavioral mistakes from your personal worth. Keep nurturing this supportive inner dialogue.";
+                } else if (percentage <= 65) {
+                    titleEl.textContent = "⚖️ Fluctuating Between Accountability & Self-Blame";
+                    descEl.textContent = "You strive to understand yourself, yet under stress you occasionally slip into harsh comparison or guilt. Practice daily cognitive reframing.";
+                } else {
+                    titleEl.textContent = "🚨 High Inner Harshness & Self-Flagellation";
+                    descEl.textContent = "Your inner critic is draining your mental energy. Remember the core lesson: lasting growth starts with understanding and small steps, not self-punishment.";
+                }
+            }
+        }
+
+        // Render Reframing Cards
+        function renderReframeCards() {
+            const cards = i18nData[currentLang].reframeCards;
+            const grid = document.getElementById('reframeCardsGrid');
+            const flipHint = currentLang === 'ar' ? 'اضغط لتحويل الفكرة' : 'Click to transform thought';
+
+            grid.innerHTML = cards.map((card, idx) => {
+                const isFlipped = !!flippedCards[idx];
+                return `
+                    <div onclick="toggleCardFlip(${idx})" class="cursor-pointer rounded-3xl p-6 border-2 transition-all duration-300 shadow-md flex flex-col justify-between space-y-4 ${
+                        isFlipped
+                            ? 'bg-brand-50/90 dark:bg-brand-950/50 border-brand-400 dark:border-brand-600'
+                            : 'bg-white dark:bg-slate-900 border-rose-200 dark:border-rose-900/60 hover:border-rose-400'
+                    }">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-xs font-extrabold px-3 py-1 rounded-full ${
+                                isFlipped
+                                    ? 'bg-brand-200 text-brand-900 dark:bg-brand-800 dark:text-brand-200'
+                                    : 'bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300'
+                            }">
+                                ${isFlipped ? (currentLang === 'ar' ? '✓ صوت الوعي المتزن' : '✓ Balanced Voice') : (currentLang === 'ar' ? '✗ صوت جلد الذات' : '✗ Inner Critic')}
+                            </span>
+                            <span class="text-[11px] font-semibold text-slate-400">${card.category}</span>
+                        </div>
+
+                        <p class="text-sm sm:text-base font-bold leading-relaxed ${
+                            isFlipped ? 'text-brand-900 dark:text-brand-100' : 'text-slate-800 dark:text-slate-200'
+                        }">
+                            ${isFlipped ? card.balanced : card.harsh}
+                        </p>
+
+                        <div class="pt-2 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between text-xs font-bold ${
+                            isFlipped ? 'text-brand-600 dark:text-brand-400' : 'text-rose-500 dark:text-rose-400'
+                        }">
+                            <span>${flipHint}</span>
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleCardFlip(idx) {
+            flippedCards[idx] = !flippedCards[idx];
+            renderReframeCards();
+        }
+
+        function generateSuggestedReframe() {
+            const harshInput = document.getElementById('customHarshInput');
+            const balancedInput = document.getElementById('customBalancedInput');
+
+            if (currentLang === 'ar') {
+                if (!harshInput.value.trim()) {
+                    harshInput.value = "تأخرت في إنجاز هدفي وأشعر أنني أضيع عمري بلا فائدة.";
+                }
+                balancedInput.value = "أنا أتعلم وأتقدم بخطوات واقعية؛ التأخر المؤقت ليس نهاية الطريق، وسأبدأ اليوم بخطوة واحدة مركزة.";
+            } else {
+                if (!harshInput.value.trim()) {
+                    harshInput.value = "I delayed my goal again and feel like I'm wasting my potential.";
+                }
+                balancedInput.value = "I am learning at a realistic pace; a temporary delay is not failure, and I will take one focused step right now.";
+            }
+        }
+
+        function saveCustomReframe() {
+            const harshInput = document.getElementById('customHarshInput');
+            const balancedInput = document.getElementById('customBalancedInput');
+            const harsh = harshInput.value.trim();
+            const balanced = balancedInput.value.trim();
+
+            if (!harsh || !balanced) {
+                generateSuggestedReframe();
+                return;
+            }
+
+            customReframes.unshift({ harsh, balanced });
+            harshInput.value = '';
+            balancedInput.value = '';
+            renderSavedReframes();
+        }
+
+        function renderSavedReframes() {
+            const listEl = document.getElementById('savedReframesList');
+            if (customReframes.length === 0) {
+                listEl.innerHTML = '';
+                return;
+            }
+            listEl.innerHTML = customReframes.map(item => `
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm">
+                    <div class="text-rose-500 line-through opacity-80">${item.harsh}</div>
+                    <i class="fa-solid ${currentLang === 'ar' ? 'fa-arrow-left' : 'fa-arrow-right'} text-brand-500 hidden sm:inline"></i>
+                    <div class="font-bold text-brand-600 dark:text-brand-400">${item.balanced}</div>
+                </div>
+            `).join('');
+        }
+
+        // Render Daily Habits Checklist
+        function renderHabits() {
+            const habits = i18nData[currentLang].habits;
+            const container = document.getElementById('habitsChecklistContainer');
+            const doneCount = completedHabits.filter(Boolean).length;
+            document.getElementById('habitsProgressBadge').textContent = `${doneCount} / ${habits.length}`;
+
+            container.innerHTML = habits.map((hText, idx) => {
+                const isDone = completedHabits[idx];
+                return `
+                    <button onclick="toggleHabit(${idx})" class="w-full text-start p-3.5 rounded-2xl border transition-all flex items-center gap-3.5 ${
+                        isDone
+                            ? 'bg-brand-50/80 dark:bg-brand-950/40 border-brand-400 dark:border-brand-700 text-brand-900 dark:text-brand-200'
+                            : 'bg-slate-50 hover:bg-slate-100 dark:bg-slate-800/50 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200'
+                    }">
+                        <span class="w-6 h-6 rounded-lg flex items-center justify-center shrink-0 transition ${
+                            isDone ? 'bg-brand-500 text-white' : 'bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600'
+                        }">
+                            ${isDone ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+                        </span>
+                        <span class="text-xs sm:text-sm font-semibold ${isDone ? 'line-through opacity-80' : ''}">${hText}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function toggleHabit(idx) {
+            completedHabits[idx] = !completedHabits[idx];
+            renderHabits();
+        }
+
+        // Interactive Calming Breathing Exercise
+        function toggleBreathing() {
+            const circle = document.getElementById('breathCircle');
+            const statusText = document.getElementById('breathStatusText');
+            const btnLabel = document.getElementById('breathBtnLabel');
+            const btnIcon = document.getElementById('breathBtnIcon');
+            const dict = i18nData[currentLang];
+
+            if (isBreathing) {
+                isBreathing = false;
+                clearInterval(breathingInterval);
+                circle.className = 'breath-circle w-32 h-32 rounded-full bg-gradient-to-tr from-brand-500/30 to-purple-500/30 border-2 border-brand-400 flex flex-col items-center justify-center p-4';
+                statusText.textContent = dict.breathReady;
+                btnLabel.textContent = dict.breathStartBtn;
+                btnIcon.className = 'fa-solid fa-play';
+                return;
+            }
+
+            isBreathing = true;
+            btnLabel.textContent = dict.breathStopBtn;
+            btnIcon.className = 'fa-solid fa-stop';
+
+            let phase = 0; // 0: inhale, 1: hold, 2: exhale
+            const runPhase = () => {
+                if (!isBreathing) return;
+                if (phase === 0) {
+                    statusText.textContent = currentLang === 'ar' ? 'شهيق بعمق...' : 'Inhale deeply...';
+                    circle.className = 'breath-circle breath-inhale w-32 h-32 rounded-full bg-gradient-to-tr from-brand-500/40 to-teal-500/40 border-2 border-brand-400 flex flex-col items-center justify-center p-4';
+                    phase = 1;
+                } else if (phase === 1) {
+                    statusText.textContent = currentLang === 'ar' ? 'احتفظ بالهدوء...' : 'Hold gently...';
+                    circle.className = 'breath-circle breath-hold w-32 h-32 rounded-full bg-gradient-to-tr from-purple-500/40 to-brand-500/40 border-2 border-purple-400 flex flex-col items-center justify-center p-4';
+                    phase = 2;
+                } else {
+                    statusText.textContent = currentLang === 'ar' ? 'زفير بطيء...' : 'Exhale slowly...';
+                    circle.className = 'breath-circle breath-exhale w-32 h-32 rounded-full bg-gradient-to-tr from-brand-500/20 to-purple-500/20 border-2 border-brand-400 flex flex-col items-center justify-center p-4';
+                    phase = 0;
+                }
+            };
+
+            runPhase();
+            breathingInterval = setInterval(runPhase, 4000);
+        }
+
+        window.onload = initApp;
+    </script>
+</body>
+</html>
